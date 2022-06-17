@@ -15,6 +15,6 @@ public class GameOverUI : MonoBehaviour
     public void OnClickToTitle()
     {
         OnShow();
-        UIManager.I._curState = UI_State.Difficulty;
+        UIManager.I._curState = UI_State.Lobby;
     }
 }

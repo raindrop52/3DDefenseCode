@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
         _skillData.SetSkillManager();
 
         SkillManager.I._skillRecipe = Resources.Load("GameData/SkillRecipe") as SkillRecipe;
+
+        // 스킬 레시피 UI 작성
+        UIManager.I._uIIngame.Init();
     }
 
     private void Update()

@@ -124,8 +124,13 @@ public class RoundManager : MonoBehaviour
 
         if (UIManager.I != null)
         {
-            UIManager.I._curState = UI_State.Difficulty;
+            UIManager.I._curState = UI_State.Lobby;
         }
+    }
+
+    public void ClickLobbyStartBtn()
+    {
+        UIManager.I._curState = UI_State.Difficulty;
     }
 
     public void SelectDifficulty(Round_Difficulty index)
@@ -392,47 +397,37 @@ public class RoundManager : MonoBehaviour
     #endregion
 
     [Header("타임 Scale")]
-    [SerializeField] float _timeSpeed = 2f;
-    [SerializeField] float _timeMinLimit = 2f;
     [SerializeField] float _timeMaxLimit = 5f;
     [SerializeField] Text _txtTimeScale;
 
-    public void SetTimeSpeed(float timeScale = 0)
+    public void SetTimeSpeed()
     {
-        float time = timeScale;
+        // 시간 배속 변경
+        float time = float.Parse(_txtTimeScale.text);
+        Time.timeScale = time;
 
-        if(time < 0)
+        // 최대 수치에 도달 시
+        if (time == _timeMaxLimit)
         {
-            _timeSpeed += 1f;
-
-            if (_timeSpeed > _timeMaxLimit)
-            {
-                _timeSpeed = _timeMinLimit;
-            }
-
-            time = _timeSpeed;
-        }
-        else
-        {
-            time = timeScale;
+            // 1로 초기화 한다. ( 뒤에서 숫자를 1 증가시키기 때문에 )
+            time = 1f;
         }
 
+        // 배속 텍스트를 다음 숫자로 바꾸기
         if (_txtTimeScale != null)
         {
-            _txtTimeScale.text = string.Format("X {0}", (int)time);
+            int timeScale = (int)time + 1;
+            _txtTimeScale.text = string.Format("{0}", timeScale);
         }
-
-        Time.timeScale = time;
     }
 
     public void SetTimeNormal()
     {
         Time.timeScale = 1.0f;
-        _timeSpeed = 2.0f;
-        float time = float.Parse(_txtTimeScale.text.Substring(2,1));
-        if(time > 1.0f)
+        float time = float.Parse(_txtTimeScale.text);
+        if(time > 2.0f)
         {
-            _txtTimeScale.text = "X 2";
+            _txtTimeScale.text = "2";
         }
     }
 

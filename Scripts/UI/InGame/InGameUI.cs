@@ -53,6 +53,16 @@ public class InGameUI : MonoBehaviour
         }
     }
 
+    public void Init()
+    {
+        if(_recipeUI != null)
+        {
+            _recipeUI.Init();
+        }
+
+        ChangeTab(0);
+    }
+
     public void Clear()
     {        
         _textRound.text = "1";
@@ -72,10 +82,12 @@ public class InGameUI : MonoBehaviour
 
         foreach(GameObject go in _tabList)
         {
-            go.SetActive(false);
+            InventoryUI ui = go.GetComponent<InventoryUI>();
+            if (ui != null)
+                go.SetActive(true);
+            else
+                go.SetActive(false);
         }
-
-        ChangeTab(0);
     }
 
     void CheckUnitCount(int count)

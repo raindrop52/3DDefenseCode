@@ -6,7 +6,9 @@ using UnityEngine;
 [System.Serializable]
 public class Skill_Recipe
 {
-    public string _rank;
+    public string _rankBase;
+    public string _rankSub;
+    public string _rankResult;
     public string _base;
     public string _sub;
     public string _result;

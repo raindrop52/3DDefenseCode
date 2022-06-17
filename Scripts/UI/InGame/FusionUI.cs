@@ -118,9 +118,9 @@ public class FusionUI : MonoBehaviour
             // 랭크와 결과물을 가져옴
             recipe.GetRecipeResult(curRecipe);
             // 결과물에 맞는 스킬 정보를 가져옴
-            if(curRecipe._rank != null && curRecipe._result != null)
+            if(curRecipe._rankResult != null && curRecipe._result != null)
             {
-                Skill_Data data = SkillManager.I.GetSkill(curRecipe._rank, curRecipe._result);
+                Skill_Data data = SkillManager.I.GetSkill(curRecipe._rankResult, curRecipe._result);
                 if (data != null)
                 {
                     _resultData = data;

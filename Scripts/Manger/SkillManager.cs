@@ -148,6 +148,19 @@ public class SkillManager : MonoBehaviour
                     }
                     break;
                 }
+
+            case "m":
+                {
+                    foreach (Skill_Data item in _skillsRankM)
+                    {
+                        if (item.skill_Info.name.Equals(name))
+                        {
+                            data = item;
+                            break;
+                        }
+                    }
+                    break;
+                }
         }
 
         return data;

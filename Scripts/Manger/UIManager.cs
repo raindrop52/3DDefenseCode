@@ -5,7 +5,8 @@ using UnityEngine;
 public enum UI_State
 {
     None = -1,
-    Difficulty = 0,
+    Lobby = 0,
+    Difficulty,
     InGame,
     GameOver,
 }
@@ -54,9 +55,14 @@ public class UIManager : MonoBehaviour
 
             switch (_curState)
             {
-                case UI_State.Difficulty:
+                case UI_State.Lobby:
                     {
                         RoundManager.I.ClearStage();
+                        break;
+                    }
+
+                case UI_State.Difficulty:
+                    {
                         break;
                     }
                 case UI_State.InGame:
