@@ -9,22 +9,30 @@ public class SkillRecipe : GameData
 {
     public List<Skill_Recipe> _dataList;
 
+    public int GetListCount()
+    {
+        return _dataList.Count;
+    }
+
+    public Skill_Recipe GetRecipe(int index)
+    {
+        if(index < _dataList.Count && index >= 0)
+            return _dataList[index];
+
+        return null;
+    }
+
     public void GetRecipeResult(Skill_Recipe recipe)
     {
-        //string result = "";
-
         foreach (Skill_Recipe r in _dataList)
         {
             if (r._base == recipe._base && r._sub == recipe._sub)
             {
-                //result = r._result;
                 recipe._result = r._result;
-                recipe._rank = r._rank;
+                recipe._rankResult = r._rankResult;
                 break;
             }
         }
-
-        //return result;
     }
 
     // 유니티 에디터 함수는 #if UNITY_EDITOR #endif 로 감싸줘야 함

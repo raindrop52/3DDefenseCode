@@ -10,23 +10,18 @@ using UnityEngine;
 
 public class Skill_Atk : Skill
 {
-    public int _damageValue = 1;        // 데미지 계산값
-    public int _damage = 10;            // 실제 데미지
+    public float _upValue = 1;        // 성장 값
+    public float _value = 10;         // 고정 값
 
     protected override void Start()
     {
         Invoke("Disappear", _playTime);
     }
 
-    public override void SetParameter(int parameter)
+    public override void SetParameter(float parameter, float upParameter)
     {
-        _damageValue = parameter;
-    }
-
-    protected override void Update()
-    {
-        if(_owner != null)
-            _damage = _owner._level * _damageValue;
+        _value = parameter;
+        _upValue = upParameter;
     }
 
     protected void OnDamage(Collider col)
@@ -34,7 +29,8 @@ public class Skill_Atk : Skill
         if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             IDamages enemy = col.GetComponent<IDamages>();
-            enemy.Damage(_damage);
+            float damage = _value + (_owner._level * _upValue);
+            enemy.Damage(damage);
         }
     }
 

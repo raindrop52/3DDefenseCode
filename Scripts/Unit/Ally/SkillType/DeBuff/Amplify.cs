@@ -8,11 +8,11 @@ public class Amplify : Skill_DeBuff
 
     protected override void InDeBuffTypeEvent(GameObject obj)
     {
-        float value = (_value + (_owner._level * _calcValue)) * 0.01f;
+        float percent = (_value + (_owner._level * _upValue)) * 0.01f;
         Enemy enemy = obj.GetComponent<Enemy>();
         if (enemy != null)
         {
-            enemy._dmgAmplify += value;
+            enemy._dmgAmplify += percent;
         }
     }
 

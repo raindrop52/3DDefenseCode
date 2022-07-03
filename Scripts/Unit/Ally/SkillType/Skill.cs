@@ -33,7 +33,8 @@ public class Skill_Info
     public int type;                    // 종류 (0 공격, 1 버프, 2 디버프)
     public string name;                 // 이름
     public string desc;                 // 설명
-    public float value;                 // 수치
+    public float value;                 // 고정값
+    public float upValue;               // 성장값
     public float percent;               // 확률
     public string iconPath;             // 아이콘 이미지 경로
     public string prefabObjName;        // 프리팹 오브젝트 명
@@ -45,13 +46,14 @@ public class Skill_Info
 
     }
 
-    public Skill_Info(string rank, int type, string name, string desc, float value, float percent, string iconPath, string objName)
+    public Skill_Info(string rank, int type, string name, string desc, float value, float upValue, float percent, string iconPath, string objName)
     {
         this.rank = rank;
         this.type = type;
         this.name = name;
         this.desc = desc;
         this.value = value;
+        this.upValue = upValue;
         this.percent = percent;
         this.iconPath = iconPath;
         prefabObjName = objName;
@@ -82,7 +84,7 @@ public class Skill : MonoBehaviour
 
     }
 
-    public virtual void SetParameter(int parameter)
+    public virtual void SetParameter(float parameter, float upParameter)
     {
         
     }

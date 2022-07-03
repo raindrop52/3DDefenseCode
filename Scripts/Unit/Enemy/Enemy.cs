@@ -75,13 +75,13 @@ public class Enemy : Unit, IDamages
     }
 
     #region 생존 관련(데미지)
-    public void Damage(int hitDmg)
+    public void Damage(float hitDmg)
     {
-        _hp -= (int)(hitDmg * _dmgAmplify);
+        _hp -= (hitDmg * _dmgAmplify);
 
         if (_hpBar != null)
         {
-            float percent = (float)_hp / (float)_maxHp;
+            float percent = _hp / _maxHp;
 
             _hpBar.SetGague(percent);
         }

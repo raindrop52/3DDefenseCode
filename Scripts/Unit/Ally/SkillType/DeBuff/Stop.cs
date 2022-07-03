@@ -14,7 +14,7 @@ public class Stop : Skill_DeBuff
         if (_owner == null)
             return;
 
-        float value = _value + (_owner._level * _calcValue);
+        float value = _value + (_owner._level * _upValue);
         Enemy enemy = obj.GetComponent<Enemy>();
         if (enemy != null)
         {

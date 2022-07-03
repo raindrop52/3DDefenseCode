@@ -34,7 +34,6 @@ public class RoundManager : MonoBehaviour
     {
         get { return _start; }
     }
-    bool _pause = false;                // 일시 정지 버튼 클릭 시 적용
     
     // 스폰 임시 관리용(테스터용)
     [SerializeField] bool _noSpawn = false;
@@ -92,6 +91,10 @@ public class RoundManager : MonoBehaviour
     // 라운드 적 체력 커브
     [SerializeField] long _maxHp = 50000;
     public AnimationCurve _enemyHpCurve;
+
+    // 소환수 성장 소모 골드 커브
+    [SerializeField] long _levelUpGold = 100;
+    public AnimationCurve _levelUpCurve;
     #endregion
 
     // 아군 스폰
@@ -350,6 +353,24 @@ public class RoundManager : MonoBehaviour
         // 실패 UI 표시
         _start = false;
         UIManager.I._curState = UI_State.GameOver;
+    }
+
+    public int GetLevelUpGold(int level)
+    {
+        int gold = (int)((float)(_levelUpGold * _levelUpCurve.Evaluate((float)level / 100.0f)));
+
+        return gold;
+    }
+
+    public bool LevelUpGold(int level)
+    {
+        // 100렙 맥스
+        int useGold = GetLevelUpGold(level);
+
+        if (UseGold(useGold))
+            return true;
+        else
+            return false;
     }
 
     void CreateUseGold(int gold, bool isGet = true)

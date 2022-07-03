@@ -5,8 +5,8 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     // 체력
-    public int _hp = 0;
-    public int _maxHp = 10;
+    public float _hp = 0f;
+    public float _maxHp = 10f;
     public float _resHp = 0.3f;        // 자연 치유 hp
 
     // Rigidbody, Collider

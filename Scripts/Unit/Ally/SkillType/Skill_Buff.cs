@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Skill_Buff : Skill
 {
-    public float _value = 1.0f;      // 기본값
-    public float _calcValue = 0.1f;         // 수치 비율
+    public float _value = 1.0f;         // 고정값
+    public float _upValue = 0.1f;       // 성장값
 
     protected override void OnTriggerEnter(Collider other)
     {
@@ -13,6 +13,12 @@ public class Skill_Buff : Skill
         {
             InBuffTypeEvent(other.gameObject);
         }
+    }
+
+    public override void SetParameter(float parameter, float upParameter)
+    {
+        _value = parameter;
+        _upValue = upParameter;
     }
 
     protected void OnTriggerExit(Collider other)

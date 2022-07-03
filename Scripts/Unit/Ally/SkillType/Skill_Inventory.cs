@@ -169,6 +169,8 @@ public class Skill_Inventory : MonoBehaviour
                     Skill skill = fxGo.GetComponent<Skill>();
                     skill.SetTransform(transform);
 
+                    skill.SetParameter(_skills[i].skill_Info.value, _skills[i].skill_Info.upValue);
+
                     _skills[i].passiveRinker = skill;
                 }
                 else
@@ -183,6 +185,8 @@ public class Skill_Inventory : MonoBehaviour
                         {
                             skill = fxGo.GetComponentInChildren<Skill>();
                         }
+
+                        skill.SetParameter(_skills[i].skill_Info.value, _skills[i].skill_Info.upValue);
 
                         // 발동형 버프 스킬
                         if (_skills[i].skill_Info.type == 1)

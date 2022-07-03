@@ -13,7 +13,7 @@ public class UIClick_Inventory : MonoBehaviour
     [SerializeField] float offsetX;
     [SerializeField] float offsetY;
 
-    static float LIMIT_X_MAX = 745.0f;
+    static float LIMIT_X_MAX = 198.0f;
 
 
     private void Awake()

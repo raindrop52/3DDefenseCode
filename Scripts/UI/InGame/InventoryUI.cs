@@ -25,8 +25,6 @@ public class InventoryUI : BottomUIBase
     {
         base.OnDisable();
 
-        Debug.Log("²¨Á³´Ù");
-
         ClearClickObj();
     }
 

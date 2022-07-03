@@ -18,6 +18,7 @@ MonoBehaviour:
     name: "\uBD88"
     desc: "\uC2A4\uD0AC \uC870\uD569\uC5D0 \uC0AC\uC6A9\uB41C\uB2E4"
     value: 0
+    upValue: 0
     percent: 0
     iconPath: 1
     prefabObjName: 
@@ -27,6 +28,7 @@ MonoBehaviour:
     name: "\uBB3C"
     desc: "\uC2A4\uD0AC \uC870\uD569\uC5D0 \uC0AC\uC6A9\uB41C\uB2E4"
     value: 0
+    upValue: 0
     percent: 0
     iconPath: 2
     prefabObjName: 
@@ -36,6 +38,7 @@ MonoBehaviour:
     name: "\uBC14\uB78C"
     desc: "\uC2A4\uD0AC \uC870\uD569\uC5D0 \uC0AC\uC6A9\uB41C\uB2E4"
     value: 0
+    upValue: 0
     percent: 0
     iconPath: 3
     prefabObjName: 
@@ -45,6 +48,7 @@ MonoBehaviour:
     name: "\uB545"
     desc: "\uC2A4\uD0AC \uC870\uD569\uC5D0 \uC0AC\uC6A9\uB41C\uB2E4"
     value: 0
+    upValue: 0
     percent: 0
     iconPath: 4
     prefabObjName: 
@@ -53,9 +57,10 @@ MonoBehaviour:
     type: 0
     name: "\uBD88\uAF43 \uB9DD\uD1A0"
     desc: "\uBD88\uAF43\uC758 \uB9DD\uD1A0\uB97C \uB458\uB7EC \uC8FC\uBCC0\uC758
-      \uC801\uC5D0 \uCD08\uB2F9 10 + (\uB808\uBCA8 X 5)\uC758 \uB370\uBBF8\uC9C0\uB97C
+      \uC801\uC5D0 \uCD08\uB2F9 10 + (\uB808\uBCA8 X 2)\uC758 \uB370\uBBF8\uC9C0\uB97C
       \uC785\uD78C\uB2E4."
     value: 10
+    upValue: 2
     percent: 100
     iconPath: 11
     prefabObjName: )FrameCape
@@ -65,7 +70,8 @@ MonoBehaviour:
     name: "\uBA54\uD14C\uC624"
     desc: "\uAC70\uB300\uD55C \uC6B4\uC11D\uC744 \uB5A8\uC5B4\uD2B8\uB824 \uC8FC\uBCC0\uC758
       \uC801\uC5D0\uAC8C (\uB808\uBCA8 X 100)\uC758 \uB370\uBBF8\uC9C0\uB97C \uC785\uD78C\uB2E4."
-    value: 100
+    value: 0
+    upValue: 100
     percent: 10
     iconPath: 12
     prefabObjName: )MeteorStrike
@@ -74,9 +80,10 @@ MonoBehaviour:
     type: 0
     name: "\uD3EC\uACA9 \uC9C0\uC6D0"
     desc: "\uD3EC\uACA9 \uC9C0\uC6D0\uC744 \uC694\uCCAD\uD558\uC5EC \uC9C0\uC0C1\uC758
-      \uC801\uC5D0\uAC8C \uD55C \uBC1C\uB2F9 (\uB808\uBCA8 X 20)\uC758 \uB370\uBBF8\uC9C0\uB97C
+      \uC801\uC5D0\uAC8C \uD55C \uBC1C\uB2F9 (\uB808\uBCA8 X 10)\uC758 \uB370\uBBF8\uC9C0\uB97C
       \uC785\uD78C\uB2E4."
-    value: 20
+    value: 0
+    upValue: 10
     percent: 30
     iconPath: 13
     prefabObjName: )StarRays
@@ -84,9 +91,10 @@ MonoBehaviour:
   - rank: c
     type: 0
     name: "\uC6C5\uB369\uC774"
-    desc: "\uCD08\uB2F9 (\uB808\uBCA8 X 5)\uC758 \uB370\uBBF8\uC9C0\uB97C \uC785\uD788\uB294
+    desc: "\uCD08\uB2F9 (\uB808\uBCA8 X 3)\uC758 \uB370\uBBF8\uC9C0\uB97C \uC785\uD788\uB294
       \uC6C5\uB369\uC774\uB97C \uC18C\uD658\uD55C\uB2E4."
-    value: 5
+    value: 0
+    upValue: 3
     percent: 30
     iconPath: 14
     prefabObjName: )FloorWater
@@ -94,9 +102,10 @@ MonoBehaviour:
   - rank: c
     type: 0
     name: "\uCC38\uACA9"
-    desc: "\uC804\uBC29\uC744 \uBCA0\uC5B4 (\uB808\uBCA8 X 30)\uC758 \uB370\uBBF8\uC9C0\uB97C
+    desc: "\uC804\uBC29\uC744 \uBCA0\uC5B4 (\uB808\uBCA8 X 10)\uC758 \uB370\uBBF8\uC9C0\uB97C
       \uC785\uD78C\uB2E4."
-    value: 30
+    value: 0
+    upValue: 10
     percent: 30
     iconPath: 15
     prefabObjName: )BloodSlash
@@ -105,28 +114,31 @@ MonoBehaviour:
     type: 1
     name: "\uBC14\uB78C\uC758 \uB178\uB798"
     desc: "\uBC14\uB78C\uC758 \uB178\uB798\uB97C \uBD88\uB7EC \uC8FC\uBCC0 \uC544\uAD70\uC758
-      \uACF5\uACA9 \uC18D\uB3C4\uB97C 20 + (\uB808\uBCA8 X 1)% \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
+      \uACF5\uACA9 \uC18D\uB3C4\uB97C 20 + (\uB808\uBCA8 X 0.2)% \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
     value: 20
+    upValue: 0.2
     percent: 100
     iconPath: 101
-    prefabObjName: )Haste(Party)
+    prefabObjName: )Haste(Only)
     sprite: {fileID: 21300000, guid: 53d838e256febaa49982da9cb083013a, type: 3}
   - rank: c
     type: 1
     name: "\uAC00\uC18D"
     desc: "\uC77C\uC2DC\uC801\uC73C\uB85C \uC790\uC2E0\uC758 \uACF5\uACA9 \uC18D\uB3C4\uB97C
-      60 + (\uB808\uBCA8 X 1)% \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
+      60 + (\uB808\uBCA8 X 0.1)% \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
     value: 60
+    upValue: 0.1
     percent: 30
     iconPath: 102
-    prefabObjName: )Haste(Only)
+    prefabObjName: )Haste(Party)
     sprite: {fileID: 21300000, guid: 7fe9521a71e7d0047964778c9fe16713, type: 3}
   - rank: c
     type: 2
     name: "\uC545\uB9C8\uC758 \uB208"
-    desc: "\uC8FC\uBCC0\uC758 \uC801\uC758 \uBC1B\uB294 \uD53C\uD574\uB97C 10+(\uB808\uBCA8X1)%
+    desc: "\uC8FC\uBCC0\uC758 \uC801\uC758 \uBC1B\uB294 \uD53C\uD574\uB97C 10+(\uB808\uBCA8X0.1)%
       \uC99D\uAC00\uC2DC\uD0A4\uB294 \uC545\uB9C8\uC758 \uB208\uC744 \uC18C\uD658\uD55C\uB2E4"
     value: 10
+    upValue: 0.1
     percent: 100
     iconPath: 201
     prefabObjName: )DevilEye
@@ -137,6 +149,7 @@ MonoBehaviour:
     desc: "\uC801\uC744 1 + (\uB808\uBCA8 X 0.1)\uCD08 \uB3D9\uC548 \uC815\uC9C0\uC2DC\uD0A4\uB294
       \uAC80\uC740 \uC0AC\uC2AC\uC744 \uC18C\uD658\uD55C\uB2E4"
     value: 1
+    upValue: 0.1
     percent: 30
     iconPath: 202
     prefabObjName: )DarkChain

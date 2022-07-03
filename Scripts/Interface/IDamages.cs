@@ -2,5 +2,5 @@
 using UnityEngine;
 public interface IDamages
 {
-    public void Damage(int hitDmg);
+    public void Damage(float hitDmg);
 }

@@ -13,39 +13,57 @@ MonoBehaviour:
   m_Name: SkillRecipe
   m_EditorClassIdentifier: 
   _dataList:
-  - _rank: c
+  - _rankBase: m
+    _rankSub: m
+    _rankResult: c
     _base: "\uBD88"
     _sub: "\uBD88"
     _result: "\uBD88\uAF43 \uB9DD\uD1A0"
-  - _rank: c
+  - _rankBase: m
+    _rankSub: m
+    _rankResult: c
     _base: "\uBD88"
     _sub: "\uBC14\uB78C"
     _result: "\uC545\uB9C8\uC758 \uB208"
-  - _rank: c
+  - _rankBase: m
+    _rankSub: m
+    _rankResult: c
     _base: "\uBD88"
     _sub: "\uB545"
     _result: "\uBA54\uD14C\uC624"
-  - _rank: c
+  - _rankBase: m
+    _rankSub: m
+    _rankResult: c
     _base: "\uBD88"
     _sub: "\uBB3C"
     _result: "\uD3EC\uACA9 \uC9C0\uC6D0"
-  - _rank: c
+  - _rankBase: m
+    _rankSub: m
+    _rankResult: c
     _base: "\uBB3C"
     _sub: "\uB545"
     _result: "\uC6C5\uB369\uC774"
-  - _rank: c
+  - _rankBase: m
+    _rankSub: m
+    _rankResult: c
     _base: "\uBC14\uB78C"
     _sub: "\uBD88"
     _result: "\uAC00\uC18D"
-  - _rank: c
+  - _rankBase: m
+    _rankSub: m
+    _rankResult: c
     _base: "\uBC14\uB78C"
     _sub: "\uBC14\uB78C"
     _result: "\uBC14\uB78C\uC758 \uB178\uB798"
-  - _rank: c
+  - _rankBase: m
+    _rankSub: m
+    _rankResult: c
     _base: "\uB545"
     _sub: "\uBC14\uB78C"
     _result: "\uCC38\uACA9"
-  - _rank: c
+  - _rankBase: m
+    _rankSub: m
+    _rankResult: c
     _base: "\uB545"
     _sub: "\uBD88"
     _result: "\uAC80\uC740 \uC0AC\uC2AC"

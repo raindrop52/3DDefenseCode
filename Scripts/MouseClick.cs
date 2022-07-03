@@ -55,19 +55,24 @@ public class MouseClick : MonoBehaviour
             // 광선에 부딪힌 오브젝트가 없을 경우 (= 타워가 아닌 곳을 찍은 경우)
             else if (Physics.Raycast(ray, out hit, Mathf.Infinity, _layerGround))
             {
-                // UI 표시 취소
-                if (UIManager.I._uIIngame != null)
-                {
-                    // 장착 버튼을 누른 상태일 경우 동작
-                    UIManager.I._uIIngame._towerUI.HideTowerInfo();
-
-                    UIManager.I._uIIngame._towerUI.DeSelectTower();
-
-                    UIManager.I._uIIngame._inventoryUI.ClearClickObj();
-
-                    OffClickInfo();
-                }
+                Deselect();
             }
+        }
+    }
+
+    public void Deselect()
+    {
+        // UI 표시 취소
+        if (UIManager.I._uIIngame != null)
+        {
+            // 장착 버튼을 누른 상태일 경우 동작
+            UIManager.I._uIIngame._towerUI.HideTowerInfo();
+
+            UIManager.I._uIIngame._towerUI.DeSelectTower();
+
+            UIManager.I._uIIngame._inventoryUI.ClearClickObj();
+
+            OffClickInfo();
         }
     }
 }

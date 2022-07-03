@@ -18,8 +18,7 @@ public class Haste : Skill_Buff
         if (_owner == null)
             return;
 
-        float value = _value + (_owner._level * _calcValue);
-        float percent = value / 100.0f;
+        float percent = (_value + (_owner._level * _upValue)) * 0.01f;
 
         Ally ally = obj.GetComponent<Ally>();
         if (ally != null)

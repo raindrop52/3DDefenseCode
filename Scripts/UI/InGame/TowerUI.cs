@@ -17,6 +17,8 @@ public class TowerUI : MonoBehaviour
     [SerializeField] Text _textName;
     [SerializeField] Text _textLevel;
 
+    [SerializeField] Text _textLevelUpBtn;
+
     [SerializeField] SkillInfoUI _originUI;
     [SerializeField] Transform _skillUIParent;
     SkillInfoUI[] _skillUIs;
@@ -34,6 +36,7 @@ public class TowerUI : MonoBehaviour
         _tweenUI = GetComponent<EasyTween>();
         _tweenUI.gameObject.SetActive(false);
         _skillUIs = _skillUIParent.GetComponentsInChildren<SkillInfoUI>(true);
+        _textLevelUpBtn.gameObject.SetActive(false);
     }
 
     public void HideTowerInfo()
@@ -52,8 +55,6 @@ public class TowerUI : MonoBehaviour
                 MouseClick.I.OffClickInfo();
             }
         }
-
-        
     }
 
     // 타워 클릭 시 보여지는 정보 변경
@@ -214,7 +215,7 @@ public class TowerUI : MonoBehaviour
     // 소환 버튼
     public void SummonCreature()
     {
-        if (RoundManager.I.UseGold(50))      //TODO : 골드 소모
+        if (RoundManager.I.UseGold(50))
         {
             // Prefab 부분
             RoundManager.I.SpawnUnit(_curSummonInfo);
@@ -235,10 +236,14 @@ public class TowerUI : MonoBehaviour
             {
                 // 임시 스킬
                 skill.skill_Obj = null;
-                skill.skill_Info = new Skill_Info("original", 0, "임시", "글로 작성한 스킬 데미지는 없다.", 0.0f, 0.1f, "5", "");
+                skill.skill_Info = new Skill_Info("original", 0, "임시", "글로 작성한 스킬 데미지는 없다.", 0.0f, 0.0f, 0.1f, "5", "");
             }
 
             _curSummonInfo._skillInventory.SetOriginSkill(skill);
+
+            SetLevelUpGold();
+            _textLevelUpBtn.gameObject.SetActive(true);
+
             // 소환 버튼 숨김 및 레벨 표시
             ShowLevelUI(true);
             SetUIData();
@@ -254,11 +259,29 @@ public class TowerUI : MonoBehaviour
         // 소환 된 상태일 때만 눌리도록
         if (_curSummonInfo != null && _curSummonInfo._isSummon == true)
         {
-            if (RoundManager.I.UseGold(0))  // TODO : 골드 소모
+            int level = _curSummonInfo.Owner._level;
+            if(level >= 100)
             {
-                _textLevel.text = string.Format("LV.{0}", ++_curSummonInfo.Owner._level);
+                return;
+            }
+
+            if (RoundManager.I.LevelUpGold(level))
+            {
+                if(level + 1 < 100)
+                    _textLevel.text = string.Format("LV.{0}", level + 1);
+                else
+                    _textLevel.text = string.Format("LV.Max");
+
+                _curSummonInfo.Owner._level++;
+
+                SetLevelUpGold();
             }
         }
+    }
+
+    void SetLevelUpGold()
+    {
+        _textLevelUpBtn.text = string.Format("(-{0})", RoundManager.I.GetLevelUpGold(_curSummonInfo.Owner._level));
     }
 
     public void EquipSkill()
@@ -366,4 +389,9 @@ public class TowerUI : MonoBehaviour
         _curSelecetIndex = index;
     }
     #endregion
+
+    public void CloseUI()
+    {
+        MouseClick.I.Deselect();
+    }
 }

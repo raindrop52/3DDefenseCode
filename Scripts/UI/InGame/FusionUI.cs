@@ -22,7 +22,6 @@ public class FusionUI : MonoBehaviour
     public Fusion_Scroll_Inven[] _selectSkills;
     Skill_Data _resultData = null;
 
-    bool _onFusion = false;
     public bool _onShow = false;
 
     private void Awake()
